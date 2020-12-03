@@ -1,4 +1,10 @@
-<%= form_with(model: friend, local: true) do |form| %>
+
+<div class="card">
+  <div class="card-header">
+    <h1>Add New Friend</h1>
+  </div>
+  <div class="card-body">
+  <%= form_with(model: friend, local: true) do |form| %>
   <% if friend.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(friend.errors.count, "error") %> prohibited this friend from being saved:</h2>
@@ -10,8 +16,7 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field form-group">
+    <div class="field form-group">
     <% form.label :first_name %>
     <%= form.text_field :first_name,class:"form-control",placeholder:"First Name" %>
   </div>
@@ -23,7 +28,7 @@
 
   <div class="field form-group">
     <% form.label :email %>
-    <%= form.text_field :email,class:"form-control",placeholder:"Email" %>
+    <%= form.email_field :email,class:"form-control",placeholder:"Email" %>
   </div>
 
   <div class="field form-group">
@@ -40,3 +45,29 @@
     <%= form.submit class:'btn btn-success' %>
   </div>
 <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
